@@ -9,7 +9,7 @@ echo __d('croogo', 'Hello %s', $user->name); ?>,
 		'controller' => 'Users',
 		'action' => 'reset',
 		$user->username,
-		$user->activationKey,
+		$user->activation_key,
 	], true);
 	echo __d('croogo', 'Please visit this link to reset your password: %s', $url);
 ?>
