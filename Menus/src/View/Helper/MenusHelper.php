@@ -127,7 +127,7 @@ class MenusHelper extends Helper
                 $options[$attributes[1][$j]] = $attributes[2][$j];
             }
             $options = Hash::expand($options);
-            $event->data['content'] = str_replace($tagMatches[0][$i], $this->menu($menuAlias, $options), $event->data['content']);
+            $event->setData('content', str_replace($tagMatches[0][$i], $this->menu($menuAlias, $options), $event->getData('content')));
         }
         return $event->data;
     }

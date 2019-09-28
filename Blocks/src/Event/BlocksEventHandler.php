@@ -79,12 +79,14 @@ class BlocksEventHandler implements EventListenerInterface
         }
 
         $View = $event->subject;
+        $data = $event->getData();
         $body = null;
-        if (isset($event->data['content'])) {
-            $body =& $event->data['content'];
-        } elseif (isset($event->data['node'])) {
-            $body =& $event->data['node']->body;
+        if (isset($data['content'])) {
+            $body =& $data['content'];
+        } elseif (isset($data['node'])) {
+            $body =& $data['node']->body;
         }
+        $event->setData($data);
 
         $parsed = $converter->parseString('block|b', $body, [
             'convertOptionsToArray' => true,
