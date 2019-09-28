@@ -2,7 +2,6 @@
 
 namespace Croogo\Comments\Model\Table;
 
-use Cake\Database\Schema\Table as Schema;
 use Cake\Mailer\MailerAwareTrait;
 use Cake\Network\Exception\NotFoundException;
 use Cake\ORM\Query;
